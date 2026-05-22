@@ -2,7 +2,7 @@
 
 ## Цель
 
-Реализовать минимальную multimodal language model для задач визуально-математического рассуждения. Модель получает изображение и вопрос, а возвращает ответ или вариант ответа.
+Реализовать минимальную multimodal language model. Модель получает изображение и вопрос, а возвращает ответ или вариант ответа.
 
 Примеры задач:
 
@@ -16,9 +16,9 @@
 Рекомендуемая архитектура:
 
 ```text
-image → ViT encoder → trainable adapter → visual embeddings
-text question → tokenizer → text embeddings
-visual embeddings + text embeddings → frozen/instruct LLM → answer
+image -> ViT encoder -> trainable adapter -> visual embeddings
+text question -> tokenizer -> text embeddings
+visual embeddings + text embeddings -> frozen/instruct LLM -> answer
 ```
 
 В обязательной части можно считать, что:
@@ -95,19 +95,14 @@ LoRA используется только в Track C или как бонус
 
 ## Ограничения
 
-- В public-тестах не должно быть интернета.
-- Нельзя требовать у всех студентов полноценного GPU-обучения.
-- Нельзя хранить hidden labels в student-template.
 - Все параметры должны задаваться через YAML-конфиги.
 - Код должен быть воспроизводимым: seed, config, логирование.
 
-## Профильные источники для математиков
-
-Рекомендуемые источники для преподавателя:
+## Профильные источники 
 
 - MathVista — visual mathematical reasoning benchmark;
 - MAVIS — mathematical visual instruction tuning datasets;
 - MATH-Vision — visual math tasks from real math competitions;
 - We-Math — benchmark with hierarchical visual mathematical reasoning concepts.
 
-В student-template включён только toy-набор. Реальные источники подключаются преподавателем отдельно с учётом лицензий и правил курса.
+В student-template включён только toy-набор. Реальные источники подключаются преподавателем отдельно.
